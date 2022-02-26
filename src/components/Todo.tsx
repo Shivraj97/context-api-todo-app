@@ -8,12 +8,10 @@ type Props = {
 };
 
 const Todo: React.FC<Props> = ({ todo, deleteTodo }) => {
-  const checkTodo: string = todo.status ? `line-through` : "";
   return (
     <div className="Card">
       <div className="Card--text">
-        <h1 className={checkTodo}>{todo.title}</h1>
-        <span className={checkTodo}>{todo.description}</span>
+        <h1>{todo.title}</h1>
       </div>
       <div onClick={() => deleteTodo(todo.id)} className="Card--button">
         <MdDelete />
