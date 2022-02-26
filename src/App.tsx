@@ -1,12 +1,22 @@
-import React from 'react';
-import './App.css';
+import * as React from 'react';
 
-function App() {
+import TodoProvider from './context/todoContext';
+import ThemeProvider from './context/themeContext';
+import Todos from './containers/Todos';
+import ThemeWrapper from './components/ThemeWrapper';
+import './styles.css';
+
+export default function App() {
   return (
-    <div className="App">
-      Hello
-    </div>
+    <ThemeProvider>
+      <TodoProvider>
+        <ThemeWrapper>
+          <main className="App">
+            <h1>My Todos</h1>
+            <Todos />
+          </main>
+        </ThemeWrapper>
+      </TodoProvider>
+    </ThemeProvider>
   );
 }
-
-export default App;
